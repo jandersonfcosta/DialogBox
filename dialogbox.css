@@ -1,4 +1,4 @@
-.db {
+.dialog-box {
     display: table;
     visibility: hidden;
     position: relative;
@@ -10,21 +10,21 @@
     box-shadow: 0 4px 18px rgba(0, 0, 0, .4);
 }
 
-.db-opened {
+.dialog-box-opened {
     visibility: visible;
     transform: scale(1);
     -webkit-transform: scale(1);
     opacity: 1;
 }
 
-.db-closed {
+.dialog-box-closed {
     visibility: hidden;
     transform: scale(.8);
     -webkit-transform: scale(.8);
     opacity: 0;
 }
 
-.db-button-close {
+.dialog-box-button-close {
     color: #999;
     float: right;
     display: inline-block;
@@ -36,13 +36,13 @@
     -webkit-user-select: none;
 }
 
-.db-content {}
+.dialog-box-content {}
 
-.db-button-close:hover {
+.dialog-box-button-close:hover {
     color: #000;
 }
 
-.db-overlay {
+.dialog-box-overlay {
     visibility: hidden;
     display: block;
     opacity: 0;
@@ -59,12 +59,12 @@
     -webkit-transition: all 200ms;
 }
 
-.db-overlay-opened {
+.dialog-box-overlay-opened {
     visibility: visible;
     opacity: 1;
 }
 
-.db-overlay-closed {
+.dialog-box-overlay-closed {
     visibility: hidden;
     opacity: 0;
 }

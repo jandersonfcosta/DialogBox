@@ -1,7 +1,7 @@
 function DialogBox(options) {
     var DIALOG,
-        CONTENT,
         CLOSEBUTTON,
+        CONTENT,
         OVERLAY;
 
     options = options ? options : {};
@@ -19,6 +19,7 @@ function DialogBox(options) {
     this.elements = {
         dialog: DIALOG,
         closeButton: CLOSEBUTTON,
+        content: CONTENT,
         overlay: OVERLAY
     };
     this.show = showDialog;
@@ -34,10 +35,10 @@ function DialogBox(options) {
     // FUNÇÕES
 
     function getElements() {
-        DIALOG = document.querySelector(".db");
-        CONTENT = document.querySelector(".db-content");
-        CLOSEBUTTON = document.querySelector(".db-button-close");
-        OVERLAY = document.querySelector(".db-overlay");
+        DIALOG = document.querySelector(".dialog-box");
+        CLOSEBUTTON = document.querySelector(".dialog-box-button-close");
+        CONTENT = document.querySelector(".dialog-box-content");
+        OVERLAY = document.querySelector(".dialog-box-overlay");
 
         return DIALOG;
     }
@@ -45,10 +46,10 @@ function DialogBox(options) {
     function setDialog() {
         document.body.insertAdjacentHTML(
             "beforeend",
-            '<div class="db-overlay db-overlay-closed">' +
-                '<div class="db db-closed">' +
-                    '<div class="db-button-close">&#10006;</div>' +
-                    '<div class="db-content"></div>' +
+            '<div class="dialog-box-overlay dialog-box-overlay-closed">' +
+                '<div class="dialog-box dialog-box-closed">' +
+                    '<div class="dialog-box-button-close">&#10006;</div>' +
+                    '<div class="dialog-box-content"></div>' +
                 '</div>' +
             '</div>'
         );
@@ -86,10 +87,10 @@ function DialogBox(options) {
             DIALOG.style.transition = "all " + options.transitionTime + "ms";
             DIALOG.style.webkitTransition = "all " + options.transitionTime + "ms";
 
-            DIALOG.classList.remove("db-closed");
-            DIALOG.classList.add("db-opened");
-            OVERLAY.classList.remove("db-overlay-closed");
-            OVERLAY.classList.add("db-overlay-opened");
+            DIALOG.classList.remove("dialog-box-closed");
+            DIALOG.classList.add("dialog-box-opened");
+            OVERLAY.classList.remove("dialog-box-overlay-closed");
+            OVERLAY.classList.add("dialog-box-overlay-opened");
         }, 0);
 
         if (options.onShow)
@@ -97,10 +98,10 @@ function DialogBox(options) {
     }
 
     function closeDialog(args) {
-        DIALOG.classList.remove("db-opened");
-        DIALOG.classList.add("db-closed");
-        OVERLAY.classList.remove("db-overlay-opened");
-        OVERLAY.classList.add("db-overlay-closed");
+        DIALOG.classList.remove("dialog-box-opened");
+        DIALOG.classList.add("dialog-box-closed");
+        OVERLAY.classList.remove("dialog-box-overlay-opened");
+        OVERLAY.classList.add("dialog-box-overlay-closed");
 
         if (options.append) {
             setTimeout(function() {
