@@ -1,5 +1,5 @@
 git add .
 git commit -m $RANDOM
-git push -v --progress
+git push
 echo press Enter...
 read
