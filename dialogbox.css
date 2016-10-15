@@ -10,8 +10,6 @@
     box-shadow: 0 4px 18px rgba(0, 0, 0, .4);
 }
 
-xx
-
 .dialog-box-opened {
     visibility: visible;
     transform: scale(1);
