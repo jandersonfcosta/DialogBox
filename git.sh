@@ -1,2 +1,5 @@
-git add .; git commit -m random; git push;
-pause
+git add .
+git commit -m "made changes"
+git push
+echo Press Enter...
+read
