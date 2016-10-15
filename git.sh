@@ -1,5 +1,5 @@
 git add .
-git commit -m "made changes"
+git commit -m $RANDOM
 git push
-echo Press Enter...
+echo press Enter...
 read
